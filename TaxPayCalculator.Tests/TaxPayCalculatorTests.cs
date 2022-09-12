@@ -5,6 +5,18 @@ public class TaxPayCalculatorTests
     [Fact]
     public void Test1()
     {
-
+        /*
+        [Fact(DisplayName = "Given income of $15,000 - $0 tax will be applied")]
+        [Fact(DisplayName = "Given income of $37,000 - $3,572 tax will be applied")]
+        [Fact(DisplayName = "Given income of $40,000 - $4,142 tax will be applied")]
+        [Fact(DisplayName = "Given income of $55,000 - $8,342 tax will be applied")]
+        [Fact(DisplayName = "Given income of $70,000 - $13,217 tax will be applied")]
+        [Fact(DisplayName = "Given income of $75,000 - $14,842 tax will be applied")]
+        [Fact(DisplayName = "Given income of $92,000 - $20,367 tax will be applied")]
+        [Fact(DisplayName = "Given income of $120,000 - $29,467 tax will be applied")]
+        [Fact(DisplayName = "Given income of $150,000 - $40,567 tax will be applied")]
+        [Fact(DisplayName = "Given income of $180,000 - $51,667 tax will be applied")]
+        [Fact(DisplayName = "Given income of $200,000 - $60,667 tax will be applied")]
+        */
     }
 }

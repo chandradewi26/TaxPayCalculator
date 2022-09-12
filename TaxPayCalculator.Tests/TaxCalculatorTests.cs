@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*Calculate raw tax without offset and medicare*/
 namespace TaxPayCalculator.Tests
 {
     public class TaxCalculatorTests
@@ -13,6 +14,7 @@ namespace TaxPayCalculator.Tests
         [Fact(DisplayName = "Given income of $15,000 - $0 tax will be applied")]
         [Fact(DisplayName = "Given income of $37,000 - $3,572 tax will be applied")]
         [Fact(DisplayName = "Given income of $40,000 - $4,142 tax will be applied")]
+        [Fact(DisplayName = "Given income of $45,000 - $5,092 tax will be applied")]
         [Fact(DisplayName = "Given income of $55,000 - $8,342 tax will be applied")]
         [Fact(DisplayName = "Given income of $70,000 - $13,217 tax will be applied")]
         [Fact(DisplayName = "Given income of $75,000 - $14,842 tax will be applied")]
