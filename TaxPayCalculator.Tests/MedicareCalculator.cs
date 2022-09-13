@@ -19,7 +19,7 @@ namespace TaxPayCalculator.Tests
         }
 
         [Theory(DisplayName = "Given income, MedicareCalculator should calculate the correct medicare levy amount")]
-        [InlineData(15000, 0)]
+        [InlineData(15000, 300)]
         [InlineData(37000, 740)]
         [InlineData(40000, 800)]
         [InlineData(45000, 900)]

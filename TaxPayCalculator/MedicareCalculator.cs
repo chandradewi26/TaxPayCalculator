@@ -4,7 +4,9 @@
     {
         public decimal Calculate(Resident resident)
         {
-            throw new NotImplementedException();
+            var taxableIncome = resident.TaxableIncome;
+
+            return taxableIncome * 0.02m;
         }
     }
 }

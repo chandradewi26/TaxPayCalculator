@@ -24,6 +24,7 @@ namespace TaxPayCalculator.Tests
         [InlineData(37000, 700)]
         [InlineData(40000, 575)]
         [InlineData(45000, 325)]
+        [InlineData(50000, 250)]
         [InlineData(55000, 175)]
         [InlineData(70000, 0)] /*Not Eligible*/
         public void TestCalculateLito_GivenIncome_ReturnCorrectAmount(decimal input, decimal expectedOutput)
