@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TaxPayCalculator
+﻿namespace TaxPayCalculator
 {
-    public class MedicareCalculator
+    public class MedicareCalculator : ICalculator
     {
+        public decimal Calculate(Resident resident)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

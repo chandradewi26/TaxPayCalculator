@@ -1,22 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TaxPayCalculator
+﻿namespace TaxPayCalculator
 {
     public class Resident
     {
-        private decimal TaxableIncome { get; }
-        private string IncomeYear { get; }
-        private decimal Tax { get; }
-        private decimal TaxOffset { get; }
-        private bool TaxThreshold { get; }
+        public decimal TaxableIncome { get; }
+        //public string IncomeYear { get; }
+        //public decimal Tax { get; }
+        //public decimal TaxOffset { get; }
+        //public bool TaxThreshold { get; }
 
-        public Resident()
+        public Resident(decimal taxableIncome)
         {
-
+            TaxableIncome = taxableIncome;
         }
     }
 }

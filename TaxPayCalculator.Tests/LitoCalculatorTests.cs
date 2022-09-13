@@ -6,9 +6,30 @@ using System.Threading.Tasks;
 
 namespace TaxPayCalculator.Tests
 {
-    public class LitoCalculatorTests
+    public class LitoCalculatorTests : CalculatorTestsFixture
     {
-        private LitoCalculator _litoCalculator = new LitoCalculator();
+        protected override ICalculator CreateCalculator()
+        {
+            return new LitoCalculator();
+        }
+
+        protected override Resident CreateResident(decimal taxableincome)
+        {
+            return new Resident(taxableincome);
+        }
+
+        [Theory(DisplayName = "Given income, LitoCalculator should calculate the correct tax offset amount")]
+        [InlineData(-100, 0)]
+        [InlineData(15000, 700)]
+        [InlineData(37000, 700)]
+        [InlineData(40000, 575)]
+        [InlineData(45000, 325)]
+        [InlineData(55000, 175)]
+        [InlineData(70000, 0)] /*Not Eligible*/
+        public void TestCalculateLito_GivenIncome_ReturnCorrectAmount(decimal input, decimal expectedOutput)
+        {
+            TestCalculation(input, expectedOutput);
+        }
         /*
         [Fact(DisplayName = "Given income of $15,000 - $700 LITO tax offset will be applied")]
         [Fact(DisplayName = "Given income of $37,000 - $700 LITO tax offset will be applied")]
