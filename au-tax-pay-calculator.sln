@@ -1,19 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxPayCalculator", "TaxPayCalculator\TaxPayCalculator.csproj", "{8BC0BBB7-4B21-4805-9D47-1DF3B22B47CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxPayCalculator", "TaxPayCalculator\TaxPayCalculator.csproj", "{8BC0BBB7-4B21-4805-9D47-1DF3B22B47CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxPayCalculator.Tests", "TaxPayCalculator.Tests\TaxPayCalculator.Tests.csproj", "{1FD36B76-A183-45FF-BFC0-FEDA88F927C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxPayCalculator.Tests", "TaxPayCalculator.Tests\TaxPayCalculator.Tests.csproj", "{1FD36B76-A183-45FF-BFC0-FEDA88F927C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxPayCalculator.API", "TaxPayCalculator.API\TaxPayCalculator.API.csproj", "{DA901470-4D23-44A1-A91A-A944B4CE90D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8BC0BBB7-4B21-4805-9D47-1DF3B22B47CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -24,5 +23,15 @@ Global
 		{1FD36B76-A183-45FF-BFC0-FEDA88F927C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FD36B76-A183-45FF-BFC0-FEDA88F927C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FD36B76-A183-45FF-BFC0-FEDA88F927C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA901470-4D23-44A1-A91A-A944B4CE90D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA901470-4D23-44A1-A91A-A944B4CE90D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA901470-4D23-44A1-A91A-A944B4CE90D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA901470-4D23-44A1-A91A-A944B4CE90D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9A785FD-6410-41D8-96D6-181A4AA5A55B}
 	EndGlobalSection
 EndGlobal
