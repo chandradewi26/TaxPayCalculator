@@ -3,7 +3,7 @@ namespace TaxPayCalculator.Tests;
 /*Calculate tax + offset + medicare*/
 public class TaxPayCalculatorTests
 {
-    private readonly ICalculator? _calculator;
+    private readonly ICalculator _calculator;
 
     public TaxPayCalculatorTests()
     {
