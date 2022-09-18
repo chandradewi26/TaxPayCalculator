@@ -9,10 +9,10 @@ namespace TaxPayCalculator.API.Controllers
             [HttpGet]
             public IActionResult GetTaxResult(decimal income)
             {
-                var _calculator = new TaxPayCalculator();
+                var calculator = new TaxPayCalculator();
 
-                var _resident = new Resident(income);
-                var result = _calculator.Calculate(_resident);
+                var resident = new Resident(income);
+                var result = calculator.Calculate(resident);
                 return Ok(result);
             }
         }
