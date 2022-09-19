@@ -2,12 +2,7 @@ namespace TaxPayCalculator.Tests;
 public class TaxPayCalculatorTests
 {
     private readonly ICalculator _calculator;
-
-    public TaxPayCalculatorTests()
-    {
-        _calculator = new TaxPayCalculator();
-    }
-
+    
     private Resident CreateResident(decimal taxableincome)
     {
         return new Resident(taxableincome);
@@ -18,6 +13,11 @@ public class TaxPayCalculatorTests
         var resident = CreateResident(input);
         var result = _calculator.Calculate(resident);
         Assert.Equal(expectedOutput, result);
+    }
+
+    public TaxPayCalculatorTests()
+    {
+        _calculator = new TaxPayCalculator();
     }
 
     [Fact(DisplayName = "Given income of $15,000 - $0 tax will be applied")]
