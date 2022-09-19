@@ -29,7 +29,7 @@ public class TaxPayCalculatorTests
     [Fact(DisplayName = "Given income of $37,000 - $2,937 tax will be applied")]
     public void TestTaxPayCalculator_GivenIncome37000_2937AmountOfTaxWillBeApplied()
     {
-        TestCalculation(28956, 2937);
+        TestCalculation(37000, 2937);
     }
 
     [Fact(DisplayName = "Given income of $40,000 - $3,467 tax will be applied")]
