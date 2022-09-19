@@ -1,5 +1,4 @@
-﻿/*Calculate tax only*/
-namespace TaxPayCalculator
+﻿namespace TaxPayCalculator
 {
     public class TaxCalculator : ICalculator
     {

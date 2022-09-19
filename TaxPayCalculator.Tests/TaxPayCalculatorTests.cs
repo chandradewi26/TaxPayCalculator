@@ -1,6 +1,4 @@
 namespace TaxPayCalculator.Tests;
-
-/*Calculate tax + offset + medicare*/
 public class TaxPayCalculatorTests
 {
     private readonly ICalculator _calculator;
@@ -15,11 +13,11 @@ public class TaxPayCalculatorTests
         return new Resident(taxableincome);
     }
 
-    private void TestCalculation(decimal input, decimal expectedOuput)
+    private void TestCalculation(decimal input, decimal expectedOutput)
     {
         var resident = CreateResident(input);
         var result = _calculator.Calculate(resident);
-        Assert.Equal(expectedOuput, result);
+        Assert.Equal(expectedOutput, result);
     }
 
     [Fact(DisplayName = "Given income of $15,000 - $0 tax will be applied")]
@@ -88,17 +86,3 @@ public class TaxPayCalculatorTests
         TestCalculation(200000, 64667);
     }
 }
-
-/*
-[Fact(DisplayName = "Given income of $15,000 - $0 tax will be applied")]
-[Fact(DisplayName = "Given income of $37,000 - $2,937 tax will be applied")]
-[Fact(DisplayName = "Given income of $40,000 - $3,467 tax will be applied")]
-[Fact(DisplayName = "Given income of $45,000 - $4,392 tax will be applied")]
-[Fact(DisplayName = "Given income of $55,000 - $7,767 tax will be applied")]
-[Fact(DisplayName = "Given income of $70,000 - $13,117 tax will be applied")]
-[Fact(DisplayName = "Given income of $92,000 - $20,767 tax will be applied")]
-[Fact(DisplayName = "Given income of $120,000 - $31,267 tax will be applied")]
-[Fact(DisplayName = "Given income of $150,000 - $43,567 tax will be applied")]
-[Fact(DisplayName = "Given income of $180,000 - $55,267 tax will be applied")]
-[Fact(DisplayName = "Given income of $200,000 - $64,667 tax will be applied")]
-*/
