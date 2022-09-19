@@ -14,6 +14,5 @@
             var result = _calculator.Calculate(resident);
             Assert.Equal(expectedOutput, result);
         }
-
     }
 }

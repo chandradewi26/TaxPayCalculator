@@ -12,6 +12,18 @@
             return new Resident(taxableincome);
         }
 
+        [Fact(DisplayName = "Given income, resident will receive Correct amount of tax offset")]
+        public void TestCalculateMedicare_GivenIncome_ShouldReturnCorrectAmountOfTaxOffset()
+        {
+            var random = new Random();
+            var taxableIncome = random.Next(0, int.MaxValue);
+            decimal taxOffset = taxableIncome*0.02m;
+            TestCalculation(taxableIncome, taxOffset);
+        }
+    }
+}
+
+/*
         [Theory(DisplayName = "Given income, MedicareCalculator should calculate the correct medicare levy amount")]
         [InlineData(15000, 300)]
         [InlineData(37000, 740)]
@@ -28,5 +40,4 @@
         {
             TestCalculation(input, expectedOutput);
         }
-    }
-}
+*/
