@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TaxPayCalculator.API\TaxPayCalculator.API.csproj" />
     <ProjectReference Include="..\TaxPayCalculator\TaxPayCalculator.csproj" />
   </ItemGroup>
 
