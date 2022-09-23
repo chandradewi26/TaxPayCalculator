@@ -2,17 +2,21 @@
 {
     public class TaxCalculator : ICalculator
     {
+        public TaxCalculator() : this(new ThresholdProvider())  //This calls another constructor with matching parameter
+        {
+
+        }
+        
+        public TaxCalculator(IThresholdProvider thresholdProvider)
+        {
+            _thresholdProvider = thresholdProvider;
+        }
+
         public decimal Calculate(Resident resident)
         {
             decimal taxOnThisRange = 0;
             var taxableIncome = resident.TaxableIncome;
-            var taxThresholdList = new List<TaxThreshold>();
-
-            taxThresholdList.Add(new TaxThreshold(0, 18200, 0m));
-            taxThresholdList.Add(new TaxThreshold(18200, 45000, 0.19m));
-            taxThresholdList.Add(new TaxThreshold(45000, 120000, 0.325m));
-            taxThresholdList.Add(new TaxThreshold(120000, 180000, 0.37m));
-            taxThresholdList.Add(new TaxThreshold(180000, decimal.MaxValue, 0.45m));
+            var taxThresholdList = _thresholdProvider.CreateTaxThresholdTable(2022);
 
             for (int i = 0; i < taxThresholdList.Count(); i++)
             {
@@ -26,8 +30,10 @@
                 if (taxableIncome > upperLimit)
                     taxOnThisRange += (upperLimit - lowerLimit) * percentage;
             }
-            
+
             return taxOnThisRange;
         }
+    
+        private readonly IThresholdProvider _thresholdProvider;
     }
 }
