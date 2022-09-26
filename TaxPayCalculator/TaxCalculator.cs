@@ -2,12 +2,12 @@
 {
     public class TaxCalculator : ICalculator
     {
-        public TaxCalculator() : this(new ThresholdProvider())
+        public TaxCalculator() : this(new TaxThresholdProvider())
         {
 
         }
         
-        public TaxCalculator(IThresholdProvider thresholdProvider)
+        public TaxCalculator(ITaxThresholdProvider thresholdProvider)
         {
             _thresholdProvider = thresholdProvider;
         }
@@ -25,7 +25,7 @@
                 var percentage = taxThresholdList[i].Percentage;
 
                 if (taxableIncome > lowerLimit && taxableIncome <= upperLimit)
-                    taxOnThisRange = taxOnThisRange + (taxableIncome - lowerLimit) * percentage;
+                    taxOnThisRange += (taxableIncome - lowerLimit) * percentage;
 
                 if (taxableIncome > upperLimit)
                     taxOnThisRange += (upperLimit - lowerLimit) * percentage;
@@ -34,6 +34,6 @@
             return taxOnThisRange;
         }
     
-        private readonly IThresholdProvider _thresholdProvider;
+        private readonly ITaxThresholdProvider _thresholdProvider;
     }
 }

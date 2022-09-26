@@ -1,7 +1,6 @@
-
 namespace TaxPayCalculator
 {
-    public interface IThresholdProvider
+    public interface ITaxThresholdProvider
     {
         IList<TaxThreshold> CreateTaxThresholdTable();
     }
