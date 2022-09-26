@@ -2,26 +2,41 @@
 {
     public class LmitoCalculator : ICalculator
     {
+        public LmitoCalculator() : this(new TaxOffsetThresholdProvider())
+        {
+
+        }
+
+         public LmitoCalculator(ITaxOffsetThresholdProvider thresholdProvider)
+        {
+            _thresholdProvider = thresholdProvider;
+        }
+
         public decimal Calculate(Resident resident)
         {
+            decimal taxOffsetOnThisRange = 0;
             var taxableIncome = resident.TaxableIncome;
+            var lmitoThresholdList = _thresholdProvider.CreateTaxOffsetThresholdTable("lmito");
 
-            if (taxableIncome >= 0 && taxableIncome <= 37000)
-                return 675;
-            if (taxableIncome >= 37001 && taxableIncome <= 48000)
+            for (int i = 0 ; i < lmitoThresholdList.Count(); i++)
             {
-                var lmito = 675 + ((taxableIncome - 37000) * 0.075m); 
-                if (lmito > 1500)
-                    lmito = 1500;
-                return lmito;
+                var lowerLimit = lmitoThresholdList[i].LowerLimit;
+                var upperLimit = lmitoThresholdList[i].UpperLimit;
+                var percentage = lmitoThresholdList[i].Percentage;
+                var offset = lmitoThresholdList[i].Offset;
+
+                //For all range of income below $90000
+                if (taxableIncome > lowerLimit && taxableIncome <= upperLimit && taxableIncome <= 90000)
+                    taxOffsetOnThisRange = offset + (taxableIncome - lowerLimit) * percentage;
+
+                //For all range of income above $90000
+                if (taxableIncome > lowerLimit && taxableIncome <= upperLimit && taxableIncome > 90000)
+                    taxOffsetOnThisRange = offset - (taxableIncome - lowerLimit) * percentage;
             }
-            if (taxableIncome >= 48000 && taxableIncome <= 90000)
-                return 1500;
-            if (taxableIncome >= 90001 && taxableIncome <= 126000)
-            {
-                return 1500 - ((taxableIncome - 90000) * 0.03m);
-            }
-            return 0;
+
+            return taxOffsetOnThisRange;
         }
+        
+        private readonly ITaxOffsetThresholdProvider _thresholdProvider;
     }
 }

@@ -2,17 +2,36 @@
 {
     public class LitoCalculator : ICalculator
     {
+        public LitoCalculator() : this(new TaxOffsetThresholdProvider())
+        {
+
+        }
+
+        public LitoCalculator(ITaxOffsetThresholdProvider thresholdProvider)
+        {
+            _thresholdProvider = thresholdProvider;
+        }
+
         public decimal Calculate(Resident resident)
         {
+            decimal taxOffsetOnThisRange = 0;
             var taxableIncome = resident.TaxableIncome;
+            var litoThresholdList = _thresholdProvider.CreateTaxOffsetThresholdTable("lito");
 
-            if (taxableIncome >= 0 && taxableIncome <= 37500)
-                return 700;
-            if (taxableIncome >= 37501 && taxableIncome <= 45000)
-                return 700 - ((taxableIncome - 37500) * 0.05m);
-            if (taxableIncome >= 45001 && taxableIncome <= 66667)
-                return 325 - ((taxableIncome - 45000) * 0.015m);
-            return 0;
+            for (int i = 0; i < litoThresholdList.Count(); i++)
+            {
+                var lowerLimit = litoThresholdList[i].LowerLimit;
+                var upperLimit = litoThresholdList[i].UpperLimit;
+                var percentage = litoThresholdList[i].Percentage;
+                var offset = litoThresholdList[i].Offset;
+
+                if (taxableIncome > lowerLimit && taxableIncome <= upperLimit)
+                    taxOffsetOnThisRange = offset - (taxableIncome - lowerLimit) * percentage;
+            }
+
+            return taxOffsetOnThisRange;
         }
+        
+        private readonly ITaxOffsetThresholdProvider _thresholdProvider;
     }
 }
