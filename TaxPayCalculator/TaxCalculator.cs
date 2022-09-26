@@ -2,7 +2,7 @@
 {
     public class TaxCalculator : ICalculator
     {
-        public TaxCalculator() : this(new ThresholdProvider())  //This calls another constructor with matching parameter
+        public TaxCalculator() : this(new ThresholdProvider())
         {
 
         }
@@ -16,7 +16,7 @@
         {
             decimal taxOnThisRange = 0;
             var taxableIncome = resident.TaxableIncome;
-            var taxThresholdList = _thresholdProvider.CreateTaxThresholdTable(2022);
+            var taxThresholdList = _thresholdProvider.CreateTaxThresholdTable();
 
             for (int i = 0; i < taxThresholdList.Count(); i++)
             {

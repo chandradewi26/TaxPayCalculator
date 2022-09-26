@@ -3,6 +3,6 @@ namespace TaxPayCalculator
 {
     public interface IThresholdProvider
     {
-        IList<TaxThreshold> CreateTaxThresholdTable(int year);
+        IList<TaxThreshold> CreateTaxThresholdTable();
     }
 }
