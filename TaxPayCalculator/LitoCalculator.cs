@@ -2,7 +2,7 @@
 {
     public class LitoCalculator : ICalculator
     {
-        public LitoCalculator() : this(new TaxOffsetThresholdProvider())
+        public LitoCalculator() : this(new LitoThresholdProvider())
         {
 
         }
@@ -16,7 +16,7 @@
         {
             decimal taxOffsetOnThisRange = 0;
             var taxableIncome = resident.TaxableIncome;
-            var litoThresholdList = _thresholdProvider.CreateTaxOffsetThresholdTable("lito");
+            var litoThresholdList = _thresholdProvider.CreateTaxOffsetThresholdTable();
 
             for (int i = 0; i < litoThresholdList.Count(); i++)
             {

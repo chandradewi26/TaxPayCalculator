@@ -2,7 +2,7 @@
 {
     public class LmitoCalculator : ICalculator
     {
-        public LmitoCalculator() : this(new TaxOffsetThresholdProvider())
+        public LmitoCalculator() : this(new LmitoThresholdProvider())
         {
 
         }
@@ -16,7 +16,7 @@
         {
             decimal taxOffsetOnThisRange = 0;
             var taxableIncome = resident.TaxableIncome;
-            var lmitoThresholdList = _thresholdProvider.CreateTaxOffsetThresholdTable("lmito");
+            var lmitoThresholdList = _thresholdProvider.CreateTaxOffsetThresholdTable();
 
             for (int i = 0 ; i < lmitoThresholdList.Count(); i++)
             {
