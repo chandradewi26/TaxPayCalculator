@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxPayCalculator.Tests", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxPayCalculator.API", "TaxPayCalculator.API\TaxPayCalculator.API.csproj", "{DA901470-4D23-44A1-A91A-A944B4CE90D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxPayCalculator.MinimalAPI", "TaxPayCalculator.MinimalAPI\TaxPayCalculator.MinimalAPI.csproj", "{452A2C20-2E67-448E-A18F-135679B9E813}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxPayCalculator.MinimalAPI", "TaxPayCalculator.MinimalAPI\TaxPayCalculator.MinimalAPI.csproj", "{452A2C20-2E67-448E-A18F-135679B9E813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxPayCalculator.MinimalAPI.Tests", "TaxPayCalculator.MinimalAPI.Tests\TaxPayCalculator.MinimalAPI.Tests.csproj", "{D5171494-B65E-4618-9A93-B37D4A082E9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxPayCalculator.MinimalAPI.Tests", "TaxPayCalculator.MinimalAPI.Tests\TaxPayCalculator.MinimalAPI.Tests.csproj", "{D5171494-B65E-4618-9A93-B37D4A082E9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxPayCalculator.APITests", "TaxPayCalculator.APITests\TaxPayCalculator.APITests.csproj", "{B86496B1-D220-43AA-ADC8-B73E7E97F467}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{D5171494-B65E-4618-9A93-B37D4A082E9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5171494-B65E-4618-9A93-B37D4A082E9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5171494-B65E-4618-9A93-B37D4A082E9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B86496B1-D220-43AA-ADC8-B73E7E97F467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B86496B1-D220-43AA-ADC8-B73E7E97F467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B86496B1-D220-43AA-ADC8-B73E7E97F467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B86496B1-D220-43AA-ADC8-B73E7E97F467}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
