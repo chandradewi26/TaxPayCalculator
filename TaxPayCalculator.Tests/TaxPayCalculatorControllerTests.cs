@@ -5,6 +5,7 @@ namespace TaxPayCalculator.Tests
 {
     public class TaxPayCalculatorControllerTests
     {
+        /*
         [Fact(DisplayName = "Given income of $15,000 - $0 tax will be applied")]
         public void TestTaxPayCalculatorController_GivenIncome15000_Return0AmountOfTax()
         {
@@ -47,6 +48,7 @@ namespace TaxPayCalculator.Tests
             decimal actualResult = (decimal)okResult.Value;
             Assert.Equal(expectedOutput, actualResult);
         }
+        */
     }
 }
 
