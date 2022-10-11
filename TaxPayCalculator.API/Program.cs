@@ -11,7 +11,6 @@ builder.Services.AddSwaggerGen();
 
 //If you enter the builder var, it holds IServiceCollection Services property
 builder.Services.AddSingleton<ICalculator, TaxPayCalculator.TaxPayCalculator>();
-//How do i pass this to the controller? is it automatically passed?? -- Ask Kalpana
 
 var app = builder.Build();
 

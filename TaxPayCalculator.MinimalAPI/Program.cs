@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//Adding taxpay calculator as service ?
 builder.Services.AddSingleton<ICalculator, TaxPayCalculator.TaxPayCalculator>();
 
 var app = builder.Build();

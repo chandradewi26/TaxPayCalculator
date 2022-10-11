@@ -33,8 +33,8 @@ namespace TaxPayCalculator.MinimalAPI.Tests
         }
 
         [TestMethod]
-        [DataRow(15000,0)]
-        [DataRow(37000,2937)]
+        [DataRow(15000, 0)]
+        [DataRow(37000, 2937)]
         [DataRow(40000, 3467)]
         [DataRow(45000, 4392)]
         [DataRow(55000, 7767)]
